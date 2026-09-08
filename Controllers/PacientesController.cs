@@ -85,4 +85,33 @@ public class PacientesController : Controller
 
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Delete(int id)
+    {
+        var paciente = _context.Pacientes.Find(id);
+
+        if (paciente is null)
+        {
+            return NotFound();
+        }
+
+        return View(paciente);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public IActionResult DeleteConfirmed(int id)
+    {
+        var paciente = _context.Pacientes.Find(id);
+
+        if (paciente is null)
+        {
+            return NotFound();
+        }
+
+        _context.Pacientes.Remove(paciente);
+        _context.SaveChanges();
+
+        return RedirectToAction(nameof(Index));
+    }
 }

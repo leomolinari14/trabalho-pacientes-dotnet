@@ -39,6 +39,8 @@ else
                         <td>
                             <a asp-action="Edit" asp-route-id="@paciente.Id"
                                class="btn btn-sm btn-outline-primary">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@paciente.Id"
+                               class="btn btn-sm btn-outline-danger">Remover</a>
                         </td>
                     </tr>
                 }
