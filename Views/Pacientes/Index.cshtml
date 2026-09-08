@@ -4,7 +4,10 @@
     ViewData["Title"] = "Pacientes";
 }
 
-<h1>Pacientes</h1>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Pacientes</h1>
+    <a asp-action="Create" class="btn btn-primary">Novo paciente</a>
+</div>
 
 @if (Model.Count == 0)
 {
