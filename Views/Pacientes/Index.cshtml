@@ -24,6 +24,7 @@ else
                     <th>Telefone</th>
                     <th>Endereço</th>
                     <th>Data de nascimento</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +36,10 @@ else
                         <td>@paciente.Telefone</td>
                         <td>@paciente.Endereco</td>
                         <td>@paciente.DataNascimento?.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@paciente.Id"
+                               class="btn btn-sm btn-outline-primary">Editar</a>
+                        </td>
                     </tr>
                 }
             </tbody>
